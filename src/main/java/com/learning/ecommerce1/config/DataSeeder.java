@@ -24,49 +24,49 @@ public class DataSeeder implements CommandLineRunner {
     public void run(String... args) throws Exception {
 
         //Clear all existing data
-        categoryRepository.deleteAll();
-        productRepository.deleteAll();
+//        categoryRepository.deleteAll();
+//        productRepository.deleteAll();
 
 
         //Create Categories
         Category electronics = new Category();
-        electronics.setName("Electronics");
+        electronics.setName("Food");
 
         Category clothing = new Category();
-        clothing.setName("Clothing");
+        clothing.setName("Furniture");
 
         Category home = new Category();
-        home.setName("Home");
+        home.setName("Jewellery");
 
         categoryRepository.saveAll(Arrays.asList(electronics, home, clothing));
 
         //Create Products
 
         Product phone = new Product();
-        phone.setName("SmartPhone");
-        phone.setDescription("Latest model smartphone");
-        phone.setImageUrl("https://m.media-amazon.com/images/I/71kduvIxBVL.jpg");
-        phone.setPrice(699.99);
+        phone.setName("Ice-cream");
+        phone.setDescription("Chocolate delicious Flavour");
+        phone.setImageUrl("https://media-cldnry.s-nbcnews.com/image/upload/rockcms/2022-08/ice-cream-chocolate-bo-220810-94f45d.jpg");
+        phone.setPrice(2.99);
         phone.setCategory(electronics);
 
         Product laptop = new Product();
-        laptop.setName("Smart laptop");
-        laptop.setDescription("Latest model laptop");
-        laptop.setImageUrl("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQP9Y1kjQoHDYpu_KtkbwkvoH_whDcyAPV8JA&s");
-        laptop.setPrice(999.99);
+        laptop.setName("Freezed Parrota");
+        laptop.setDescription("Parota - heat 2min to eat");
+        laptop.setImageUrl("https://5.imimg.com/data5/ANDROID/Default/2023/6/313353442/GJ/EV/DR/53595356/product-jpeg.jpg");
+        laptop.setPrice(9.99);
         laptop.setCategory(electronics);
 
         Product jacket = new Product();
-        jacket.setName("Smart jacket");
-        jacket.setDescription("Latest model jacket");
-        jacket.setImageUrl("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQANa978finAFaYd-9RMXhS2qk8jkdvJwQSKw&s");
+        jacket.setName("Smart Sofa");
+        jacket.setDescription("Flexible Sofa");
+        jacket.setImageUrl("https://m.media-amazon.com/images/I/31m6AxwTXVL.jpg");
         jacket.setPrice(99.89);
         jacket.setCategory(clothing);
 
         Product blender = new Product();
-        blender.setName("Smart blender");
-        blender.setDescription("Latest model blender");
-        blender.setImageUrl("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpiwXx33PbGfddLcOkEB7en6TG0G1g6U3PQw&s");
+        blender.setName("Necklace");
+        blender.setDescription("Platinum Simple Necklace");
+        blender.setImageUrl("https://www.mannash.in/cdn/shop/products/MZSND292D564_M.jpg?v=1643980580");
         blender.setPrice(199.69);
         blender.setCategory(home);
 

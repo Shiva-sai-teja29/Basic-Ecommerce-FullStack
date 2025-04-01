@@ -1,16 +1,17 @@
 package com.learning.ecommerce1.model;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.Data;
 
 import java.util.Set;
 
+
 @Entity
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
+@Data
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,15 +21,14 @@ public class Category {
     @OneToMany(mappedBy = "category",
             cascade = CascadeType.ALL,
             fetch = FetchType.LAZY)
-    @JsonManagedReference
     private Set<Product> products;
-
-    public void setProducts(Set<Product> products) {
-        this.products = products;
-    }
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public void setProducts(Set<Product> products) {
+        this.products = products;
     }
 
     public Long getId() {
